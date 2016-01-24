@@ -3,18 +3,7 @@ server:
     port:8080
     address:localhost
 
-# DATASOURCE
-jdbc:
-    dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-    url: jdbc:mysql://localhost:3306/mcfield?useUnicode=true&amp;charaterEncoding=utf-8
-    databaseName: test
-    serverName: localhost
-    username: root
-    password:
-    cachePrepStmts: true
-    prepStmtsSize: 250
-    prepStmtsCacheSqlLimit: 2048
-    userServerPrepStmts: true
+
 
 # SPRING PROFILES
 spring:
@@ -23,12 +12,23 @@ spring:
         encoding.charset: UTF-8
         encoding.enable: true
         encoding.force: true
+    datasource:
+            name: test
+            url: jdbc:mysql://localhost:3306/mcfield?useUnicode=true&amp;charaterEncoding=utf-8
+            username: root
+            password:
+            # 使用HikariCP数据源
+            type: com.zaxxer.hikari.HikariDataSource
+            connectionTestQuery: SELECT 1
+            cachePrepStmts: true
+            prepStmtCacheSize: 250
+            prepStmtCacheSqlLimit: 2048
 
 
 # MyBatis
 mybatis:
     typeAliasesPackage: com.echounion.mc.modules.**.entity
-    mapperLocations: classpath:/mapping/**.xml
+    mapperLocations: classpath:/mapping/**/*.xml
     configLocation: classpath:/mybatis-config.xml
 
 # LOGGING
