@@ -1,4 +1,4 @@
-package com.example;
+package com.echounion.mc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
