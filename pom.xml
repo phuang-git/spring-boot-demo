@@ -22,6 +22,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 
+		<!-- lib versions -->
+		<shiro.version>1.2.4</shiro.version>
 		<mysql.connector.version>5.1.38</mysql.connector.version>
 		<!-- mybatis pagehelper -->
 		<pagehelper.version>4.1.0</pagehelper.version>
@@ -72,6 +74,38 @@
 			<artifactId>HikariCP</artifactId>
 			<!-- 版本号可以不用指定，Spring Boot会选用合适的版本 -->
 		</dependency>
+		<!-- Shiro start -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-quartz</artifactId>
+			<version>${shiro.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.theborakompanioni</groupId>
+			<artifactId>thymeleaf-extras-shiro</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<!-- Shiro end -->
 
 	</dependencies>
 	
